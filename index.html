@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tạo QR Miễn Phí | WebQR</title>
+<title>Tạo QR Code Miễn Phí</title>
 
-<meta name="description" content="Tạo mã QR miễn phí nhanh chóng. Chỉ cần nhập nội dung và tạo QR ngay lập tức.">
+<meta name="description" content="Tạo mã QR nhanh chóng cho link hoặc văn bản">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
@@ -21,12 +22,10 @@ display:flex;
 justify-content:center;
 align-items:center;
 height:100vh;
-color:white;
 }
 
 .container{
 background:white;
-color:black;
 padding:30px;
 border-radius:15px;
 width:350px;
@@ -66,13 +65,13 @@ button:hover{
 background:#e63950;
 }
 
-#qrcode{
-margin-top:20px;
-}
-
 .download{
 background:#4CAF50;
 margin-left:5px;
+}
+
+#qrcode{
+margin-top:20px;
 }
 
 </style>
@@ -89,7 +88,7 @@ margin-left:5px;
 
 <p>Nhập nội dung hoặc link</p>
 
-<input id="text" placeholder="Ví dụ: https://google.com">
+<input id="text" placeholder="Ví dụ: https://google.com hoặc Lê Văn Tuyến">
 
 <br>
 
@@ -102,8 +101,6 @@ margin-left:5px;
 
 <script>
 
-var qr;
-
 function createQR(){
 
 var text=document.getElementById("text").value;
@@ -115,7 +112,9 @@ return;
 
 document.getElementById("qrcode").innerHTML="";
 
-qr=new QRCode(document.getElementById("qrcode"),{
+text = encodeURIComponent(text);
+
+new QRCode(document.getElementById("qrcode"),{
 text:text,
 width:200,
 height:200
@@ -135,9 +134,7 @@ return;
 var link=document.createElement("a");
 
 link.href=img.src;
-
 link.download="qr-code.png";
-
 link.click();
 
 }
@@ -145,4 +142,5 @@ link.click();
 </script>
 
 </body>
+
 </html>
