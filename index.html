@@ -92,7 +92,8 @@ margin-top:20px;
 
 <br>
 
-<button onclick="createQR()">Tạo QR</button>
+<button onclick="pay()">Tạo QR</button>
+
 <button class="download" onclick="downloadQR()">Tải QR</button>
 
 <div id="qrcode"></div>
@@ -100,6 +101,22 @@ margin-top:20px;
 </div>
 
 <script>
+
+function pay(){
+
+let content = document.getElementById("text").value;
+
+if(content==""){
+alert("Vui lòng nhập nội dung");
+return;
+}
+
+localStorage.setItem("qrcontent",content);
+
+window.location.href="/payment.html";
+
+}
+
 
 function createQR(){
 
@@ -121,6 +138,7 @@ height:200
 });
 
 }
+
 
 function downloadQR(){
 
