@@ -4,8 +4,21 @@
 <meta charset="UTF-8">
 <title>Thanh toán QR</title>
 
-<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<script>
 
+let bank = "MB";
+let account = "123456789";   // thay bằng số tài khoản MB của bạn
+let amount = 5000;
+
+let orderId = "WEBQR-" + Math.floor(Math.random()*100000);
+
+let vietqr =
+`https://img.vietqr.io/image/${bank}-${account}-compact.png?amount=${amount}&addInfo=${orderId}`;
+
+document.getElementById("qrcode").innerHTML =
+`<img src="${vietqr}" width="250">`;
+
+</script>
 <style>
 body{
 font-family: Arial;
