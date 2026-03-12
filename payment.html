@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Thanh toán QR</title>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
+<style>
+body{
+font-family: Arial;
+text-align:center;
+margin-top:50px;
+}
+
+#qrcode{
+margin-top:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Thanh toán tạo QR</h2>
+
+<p>Số tiền: <b>5000đ</b></p>
+
+<div id="qrcode"></div>
+
+<script>
+
+let bank = "MB";
+let account = "SOTAIKHOAN"; 
+let amount = 5000;
+
+let orderId = "WEBQR-" + Math.floor(Math.random()*100000);
+
+let vietqr =
+`https://img.vietqr.io/image/${bank}-${account}-compact.png?amount=${amount}&addInfo=${orderId}`;
+
+QRCode.toCanvas(document.getElementById('qrcode'), vietqr, function (error) {
+  if (error) console.error(error)
+})
+
+</script>
+
+</body>
+</html>
