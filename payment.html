@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
 <meta charset="UTF-8">
 <title>Thanh toán QR</title>
@@ -14,13 +15,9 @@ text-align:center;
 margin-top:40px;
 }
 
-.paybox{
-margin-top:20px;
-}
-
 button{
-margin:20px;
-padding:14px 28px;
+margin-top:20px;
+padding:14px 30px;
 border:none;
 border-radius:8px;
 background:#4CAF50;
@@ -29,8 +26,12 @@ font-size:16px;
 cursor:pointer;
 }
 
+button:hover{
+background:#3e8e41;
+}
+
 #qrcode{
-margin-top:30px;
+margin-top:40px;
 }
 
 </style>
@@ -45,9 +46,11 @@ margin-top:30px;
 
 <button onclick="createQR()">Tôi đã thanh toán</button>
 
-<div class="paybox">
-<img src="https://img.vietqr.io/image/MB-0073206369999-compact.png?amount=5000&addInfo=WEBQR001" width="250">
-</div>
+<br><br>
+
+<img
+src="https://img.vietqr.io/image/MB-0073206369999-compact.png?amount=5000&addInfo=WEBQR001"
+width="260">
 
 <div id="qrcode"></div>
 
@@ -70,9 +73,12 @@ width:220,
 height:220
 });
 
+document.getElementById("qrcode").scrollIntoView();
+
 }
 
 </script>
 
 </body>
+
 </html>
