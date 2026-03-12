@@ -17,17 +17,13 @@ margin-top:40px;
 
 button{
 margin-top:20px;
-padding:14px 30px;
+padding:15px 30px;
 border:none;
 border-radius:8px;
 background:#4CAF50;
 color:white;
 font-size:16px;
 cursor:pointer;
-}
-
-button:hover{
-background:#3e8e41;
 }
 
 #qrcode{
@@ -48,9 +44,7 @@ margin-top:40px;
 
 <br><br>
 
-<img
-src="https://img.vietqr.io/image/MB-0073206369999-compact.png?amount=5000&addInfo=WEBQR001"
-width="260">
+<img src="https://img.vietqr.io/image/MB-0073206369999-compact.png?amount=5000&addInfo=WEBQR001" width="260">
 
 <div id="qrcode"></div>
 
@@ -61,8 +55,7 @@ function createQR(){
 let content = localStorage.getItem("qrcontent");
 
 if(!content){
-alert("Không có nội dung QR");
-return;
+content = "Test QR hoạt động";
 }
 
 document.getElementById("qrcode").innerHTML="";
@@ -72,8 +65,6 @@ text:content,
 width:220,
 height:220
 });
-
-document.getElementById("qrcode").scrollIntoView();
 
 }
 
