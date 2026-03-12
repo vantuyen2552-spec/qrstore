@@ -14,8 +14,12 @@ text-align:center;
 margin-top:40px;
 }
 
+.paybox{
+margin-top:20px;
+}
+
 button{
-margin-top:25px;
+margin:20px;
 padding:14px 28px;
 border:none;
 border-radius:8px;
@@ -26,7 +30,7 @@ cursor:pointer;
 }
 
 #qrcode{
-margin-top:35px;
+margin-top:30px;
 }
 
 </style>
@@ -39,20 +43,36 @@ margin-top:35px;
 
 <p>Số tiền: <b>5000đ</b></p>
 
+<button onclick="createQR()">Tôi đã thanh toán</button>
+
+<div class="paybox">
 <img src="https://img.vietqr.io/image/MB-0073206369999-compact.png?amount=5000&addInfo=WEBQR001" width="250">
-
-<br>
-
-<button onclick="
-let content = localStorage.getItem('qrcontent');
-if(!content){alert('Không có nội dung');return;}
-document.getElementById('qrcode').innerHTML='';
-new QRCode(document.getElementById('qrcode'),{text:content,width:220,height:220});
-">
-Tôi đã thanh toán
-</button>
+</div>
 
 <div id="qrcode"></div>
+
+<script>
+
+function createQR(){
+
+let content = localStorage.getItem("qrcontent");
+
+if(!content){
+alert("Không có nội dung QR");
+return;
+}
+
+document.getElementById("qrcode").innerHTML="";
+
+new QRCode(document.getElementById("qrcode"),{
+text:content,
+width:220,
+height:220
+});
+
+}
+
+</script>
 
 </body>
 </html>
