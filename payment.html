@@ -1,83 +1,17 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>Thanh toán QR</title>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
-<style>
-
-body{
-font-family:Arial;
-text-align:center;
-margin-top:40px;
-}
-
-img{
-display:block;
-margin:auto;
-}
-
-button{
-margin-top:25px;
-padding:12px 25px;
-border:none;
-border-radius:6px;
-background:#4CAF50;
-color:white;
-font-size:16px;
-cursor:pointer;
-}
-
-button:hover{
-background:#3e8e41;
-}
-
-#qrcode{
-margin-top:30px;
-}
-
-</style>
-
+<title>Test</title>
 </head>
 
-<body>
+<body style="text-align:center;margin-top:100px">
 
-<h2>Thanh toán tạo QR</h2>
+<h1>TEST NÚT</h1>
 
-<p>Số tiền: <b>5000đ</b></p>
-
-<img
-src="https://img.vietqr.io/image/MB-0073206369999-compact.png?amount=5000&addInfo=WEBQR001"
-width="250">
-
-<button id="paybtn">Tôi đã thanh toán</button>
-
-<div id="qrcode"></div>
-
-<script>
-
-document.getElementById("paybtn").onclick=function(){
-
-let content = localStorage.getItem("qrcontent");
-
-if(!content){
-alert("Không có nội dung QR");
-return;
-}
-
-document.getElementById("qrcode").innerHTML="";
-
-new QRCode(document.getElementById("qrcode"),{
-text:content,
-width:220,
-height:220
-});
-
-};
-
-</script>
+<button onclick="alert('Nút hoạt động')">
+BẤM THỬ
+</button>
 
 </body>
 </html>
