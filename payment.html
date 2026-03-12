@@ -4,30 +4,11 @@
 <meta charset="UTF-8">
 <title>Thanh toán QR</title>
 
-<script>
-
-let bank = "MB";
-let account = "0073206369999";   // thay bằng số tài khoản MB của bạn
-let amount = 5000;
-
-let orderId = "WEBQR-" + Math.floor(Math.random()*100000);
-
-let vietqr =
-`https://img.vietqr.io/image/${bank}-${account}-compact.png?amount=${amount}&addInfo=${orderId}`;
-
-document.getElementById("qrcode").innerHTML =
-`<img src="${vietqr}" width="250">`;
-
-</script>
 <style>
 body{
 font-family: Arial;
 text-align:center;
 margin-top:50px;
-}
-
-#qrcode{
-margin-top:20px;
 }
 </style>
 
@@ -39,24 +20,11 @@ margin-top:20px;
 
 <p>Số tiền: <b>5000đ</b></p>
 
-<div id="qrcode"></div>
+<br>
 
-<script>
-
-let bank = "MB";
-let account = "0073206369999"; 
-let amount = 5000;
-
-let orderId = "WEBQR-" + Math.floor(Math.random()*100000);
-
-let vietqr =
-`https://img.vietqr.io/image/${bank}-${account}-compact.png?amount=${amount}&addInfo=${orderId}`;
-
-QRCode.toCanvas(document.getElementById('qrcode'), vietqr, function (error) {
-  if (error) console.error(error)
-})
-
-</script>
+<img 
+src="https://img.vietqr.io/image/MB-0073206369999-compact.png?amount=5000&addInfo=WEBQR001"
+width="300">
 
 </body>
 </html>
